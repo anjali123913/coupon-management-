@@ -31,6 +31,32 @@ A robust and scalable coupon management system built on a modern Node.js stack, 
 | `startDate`, `endDate` | `string` | ISO 8601 timestamps for validity period. |
 | `eligibility` | `object` | Complex rules for application. |
 
+
+## 📸 UI Preview
+
+###  create coupon 
+![Hero Section](./public/reate-coupon.png)
+
+###  create coupon response
+![Hero Section](./public/reate-coupon-response.png)
+
+###  dublicate coupon response
+![Hero Section](./public/dublicate-coupon-code.png)
+
+###  get coupons 
+![About Section](./public/get-coupons.png)
+
+###  add to cart 
+![Capability Section](./public/add-to-cart.png)
+
+###  create product
+![Feature Section](./public/create-product.png)
+
+
+###  get best coupon
+![Contact Section](./public/get-best-coupon.png)
+
+
 **Body Example:**
 ```json
 {
