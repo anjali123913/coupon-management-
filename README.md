@@ -35,10 +35,10 @@ A robust and scalable coupon management system built on a modern Node.js stack, 
 ## 📸 UI Preview
 
 ###  create coupon 
-![Hero Section](./public/reate-coupon.png)
+![Hero Section](./public/create-coupon.png)
 
 ###  create coupon response
-![Hero Section](./public/reate-coupon-response.png)
+![Hero Section](./public/create-coupon-response.png)
 
 ###  dublicate coupon response
 ![Hero Section](./public/dublicate-coupon-code.png)
