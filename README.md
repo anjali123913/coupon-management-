@@ -1,21 +1,37 @@
-# Coupon Management System
+# 🏷️ Coupon Management System
 
-A functional programming-based coupon management system built with Node.js, Express, and MongoDB.
+A robust and scalable coupon management system built on a modern Node.js stack, emphasizing a **functional programming (FP)** paradigm for core business logic.
 
-## Features
+## ✨ Features
 
-- Create and manage coupons with complex eligibility rules
-- Find the best applicable coupon for a user's cart
-- Functional programming paradigm with pure functions
-- Comprehensive validation and error handling
-- MongoDB persistence with efficient queries
+* **FP Core:** All critical logic (eligibility checks, discount calculation, validation) is implemented using **pure functions** for predictability and easier testing.
+* **Complex Eligibility Rules:** Manage coupons based on various criteria:
+    * Minimum cart value (`minCartValue`)
+    * Specific product categories (`applicableCategories`)
+    * Allowed user membership tiers (`allowedUserTiers`)
+    * Usage limits (per user and total)
+* **Best Coupon Finder:** Efficiently determine the single best applicable coupon that maximizes the user's discount for a given cart.
+* **Tech Stack:** Node.js, Express, and MongoDB for persistence.
+* **Robust Validation:** Comprehensive error handling for creation and application workflows (e.g., duplicate code, expired date, invalid cart).
 
-## API Endpoints
+---
 
-### POST /api/coupons
-Create a new coupon.
+## 💻 API Endpoints
 
-**Body:**
+### 1. Coupon Management
+
+#### `POST /api/coupons` - Create a new coupon
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `code` | `string` | Unique coupon code (e.g., `SUMMER20`). |
+| `discountType` | `string` | `PERCENT` or `FIXED`. |
+| `discountValue` | `number` | The value of the discount (e.g., `20` or `500`). |
+| `maxDiscountAmount` | `number` | Optional cap on the maximum discount for `PERCENT` type. |
+| `startDate`, `endDate` | `string` | ISO 8601 timestamps for validity period. |
+| `eligibility` | `object` | Complex rules for application. |
+
+**Body Example:**
 ```json
 {
   "code": "SUMMER20",
@@ -27,53 +43,8 @@ Create a new coupon.
   "endDate": "2024-08-31T23:59:59Z",
   "usageLimitPerUser": 2,
   "eligibility": {
-    "minCartValue": 2000,
+    "minCartValue": 2000, // Min cart value in smallest currency unit (e.g., cents)
     "allowedUserTiers": ["SILVER", "GOLD", "PLATINUM"],
     "applicableCategories": ["clothing", "shoes"]
   }
 }
-
-
-## Product & Cart Management
-
-### Product Endpoints
-
-#### POST /api/products
-Create a new product.
-
-**Body:**
-```json
-{
-  "name": "Product Name",
-  "description": "Product description",
-  "category": "clothing",
-  "price": 999,
-  "stock": 50,
-  "images": ["https://example.com/image.jpg"],
-  "tags": ["men", "cotton"]
-}
-
-
-
-## 📸 Screenshots
-
-### Create Coupon
-![Create Coupon](public/create-coupon.png)
-
-### Create Coupon Response
-![Create Coupon Response](public/create-coupon-response.png)
-
-### Duplicate Coupon Code Error
-![Duplicate Coupon Code](public/duplicate-coupon-code.png)
-
-### Create Product
-![Create Product](public/create-product.png)
-
-### Add to Cart
-![Add to Cart](public/add-to-cart.png)
-
-### Get All Coupons
-![Get All Coupons](public/get-coupons.png)
-
-### Get Best Coupon
-![Get Best Coupon](public/get-best-coupon.png)
