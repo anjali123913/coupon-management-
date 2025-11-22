@@ -1,0 +1,72 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build output
+dist/
+build/
+.cache/
+.temp/
+out/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Env files
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+!.vscode/extensions.json
+
+# Optional Yarn integrity file
+.yarn-integrity
+
+# Next.js
+.next/
+out/
+
+# Svelte / Vite / Astro
+.svelte-kit/
+vite.config.ts.timestamp*
+.astro/
+
+# TypeScript
+*.tsbuildinfo
+
+# eslint cache
+.eslintcache
+
+# Compiled source
+*.dll
+*.exe
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Debug generated artifacts
+debug/
+
